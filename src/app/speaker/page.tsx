@@ -17,7 +17,7 @@ export default function Home() {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            setCounter(localStorage.getItem("earphone") ? parseInt(localStorage.getItem("earphone")!) : 100);
+            setCounter(localStorage.getItem("smartwatch") ? parseInt(localStorage.getItem("smartwatch")!) : 100);
             setParticipants(JSON.parse(localStorage.getItem("participantsNPP") || "[]"));
             setParticipantsDummy(JSON.parse(localStorage.getItem("participants") || "[]"));
 
@@ -25,8 +25,6 @@ export default function Home() {
             setConfettiAudio(new Audio("/efek_confetti.mp3"));
         }
     }, []);
-
-
 
     const startRandomizerDummy = () => {
         const intervalTime = 5;
@@ -85,7 +83,7 @@ export default function Home() {
         }, intervalTime);
 
         setCounter((prevCounter: any) => prevCounter - 1);
-        localStorage.setItem("earphone", (tunaiCounter - 1).toString());
+        localStorage.setItem("smartwatch", (tunaiCounter - 1).toString());
     }
 
     return (
@@ -96,9 +94,9 @@ export default function Home() {
                 className="absolute inset-0 w-full h-full pointer-events-none"
             />
             <div className="flex flex-col items-center justify-center min-h-screen bg-[#FEDFB6]">
-                <h1 className="text-6xl font-bold mb-6 text-[#401606]">Undian 1 Unit Earphone</h1>
+                <h1 className="text-6xl font-bold mb-6 text-[#401606]">Undian 2 Unit Blanket</h1>
                 <div className="mb-10 relative">
-                    <img src="/earphone.jpg" alt="Cash 200K" className="w-60 h-60" />
+                    <img src="/blanket.jpg" alt="Cash 200K" className="w-60 h-60" />
                 </div>
                 {!isAnimating ?
                     <div className="text-5xl font-extrabold text-gray-800 h-24 w-[300px] flex flex-col items-center justify-center border-4 border-green-700 rounded-lg bg-white shadow-lg mb-6">
